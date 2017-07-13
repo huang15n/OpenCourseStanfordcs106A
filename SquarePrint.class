@@ -1,0 +1,74 @@
+/*
+ * Author : Eddie Huang    13/07/2017
+ * Purpose : This program is about to ask the user to give the height and width of the rectangle  
+ * once if the user is giving the dimension or size ,it will print out the rectangle 
+
+****
+*  *
+*  *          4 * 5
+*  *
+****
+
+
+**********
+*        *
+*        *    10 * 4
+********** 
+
+
+
+
+ *
+ */
+
+import acm.program.*;
+import acm.util.*;
+public class SquarePrint extends ConsoleProgram{
+	
+	
+	public void run(){
+     
+		println("please enter the size that you wish to draw the rectangle:");
+		int width = readInt("what is the width :");  // to ask user to print out the width of the rectangle  
+		int height = readInt("what is the height :"); // to ask user to print out the height of the rectangle 
+		drawBoxes(width, height); // invocation of the method , it uses two parameters 
+		
+		
+		
+	}
+	
+	/**
+	 * precondition : we put the width and height as parameters inside 
+	 * postcondition : it will generate the retangle with sides but center empty 
+	 **/
+	
+	public void drawBoxes(int width, int height){
+		 
+		for(int i = 1; i <= height; i++){    // the first loop generates the height of the square 
+			for(int j = 1; j <= width; j++){ // the second loop generates the width of the square 
+				if(i == 1 || i == height){   // set the condition if in the first row or the last row it prints all of the starts 
+					print("*");
+				}
+				else                          // else it will print the start in the first column and last column ,otherwise it will get you empty 
+				{
+					if(j == 1 || j == width){
+						print("*");
+					}
+					else 
+					{
+						print(" ");
+					}
+				 
+					
+				}
+				
+			}
+			println();                     // do not forget to show this line breaker 
+		}
+		
+	}
+   
+     
+   
+
+}
