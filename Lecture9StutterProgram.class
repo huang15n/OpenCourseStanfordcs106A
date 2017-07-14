@@ -1,0 +1,52 @@
+/*
+ * Author : Eddie Huang    13/07/2017
+ * Purpose :  this game is designed to have the name that user given 
+ * and the name will be designed to be a song with rythm 
+ * the trick to do so is know how to do the name separation properly 
+ * and extract the name to get this out of and turn it into proper position 
+ * if you put hello 
+ * it will get you hheelllloo
+ */
+
+import acm.program.*;
+import acm.util.*;
+public class Hello extends ConsoleProgram{
+	
+	
+	public void run(){
+    
+		 String str = readLine("please enter the string to stutter : ");
+	  
+		 println("the stutter version is :"+stutter(str));
+		
+		 
+	   
+	}
+	
+	/*
+	 * precondition : this method takes a string and circle the whole string ,each element in the string will be extract ,and concatenated with its character doubled 
+	 * postcondition : it should print out things with pattern like each element doubled 
+	 * algorithm : you extract the string individually ,to start off ,what is the loop is the key 
+	 * one approach to do this is that ,you will have to know that the length of the string ,which is the length of the loop 
+	 * then you loop through the string ,each element cancatenate twice . 
+	 * similar to the cumulative sum method ,set an original empty string and collect the double 
+	 */
+	public String stutter(String name){
+	   String culmulative = "";
+		for(int i = 0; i < name.length(); i++ ){  // this will loop around the whole string 
+			for(int j = 0; j < 2; j++){
+				culmulative += name.substring(i,i+1);  // this is getting each character doubled 
+			}
+		}
+		 
+		return culmulative;   //return the string that we processed back 
+	}
+	 
+	
+	
+	  
+	 
+     
+   
+
+}
